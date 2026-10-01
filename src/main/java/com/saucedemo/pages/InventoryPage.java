@@ -23,17 +23,17 @@ public class InventoryPage extends BasePage {
         super(driver);
     }
 
-    // Header görünürlüğünü kontrol eden metot
+
     public boolean isProductsHeaderDisplayed() {
         return find(INVENTORY_HEADER).isDisplayed();
     }
 
-    // Ürün listesinin boş olmadığını doğrulamak için ürün sayısını döner
+
     public int getProductCount() {
         return findAll(INVENTORY_ITEMS).size();
     }
 
-    // Bütün ürünlerin isimlerinin dolu/görünür olduğunu doğrular
+
     public boolean areAllItemNamesDisplayedAndNotEmpty() {
         List<WebElement> nameElements = findAll(ITEM_NAME);
         if (nameElements.isEmpty()) return false;
@@ -46,7 +46,7 @@ public class InventoryPage extends BasePage {
         return true;
     }
 
-    // Bütün ürünlerin fiyatlarının dolu/görünür olduğunu doğrular
+
     public boolean areAllItemPricesDisplayedAndNotEmpty() {
         List<WebElement> priceElements = findAll(ITEM_PRICE);
         if (priceElements.isEmpty()) return false;
@@ -59,7 +59,7 @@ public class InventoryPage extends BasePage {
         return true;
     }
 
-    // Sayfadaki tüm ürünlerin fiyatlarını double liste olarak döner
+
     public List<Double> getProductPrices() {
         List<WebElement> priceElements = findAll(ITEM_PRICE);
         List<Double> prices = new ArrayList<>();
@@ -71,26 +71,25 @@ public class InventoryPage extends BasePage {
         return prices;
     }
 
-    // Sıralama (Sort) seçeneğini seçmek için
+
     public void selectSortOption(String optionValue) {
         Select select = new Select(find(SORT_DROPDOWN));
         select.selectByValue(optionValue);
     }
 
-    // 1. Məhsulun adına əsasən dinamik olaraq 'Add to cart' düyməsini sıxmaq
     public void addProductToCartByName(String productName) {
         String formattedName = productName.toLowerCase().replace(" ", "-");
         By addToCartButton = By.cssSelector("[data-test='add-to-cart-" + formattedName + "']");
         click(addToCartButton);
     }
 
-    // 2. Birbaşa Backpack əlavə edən köməkçi metod (Xətanı aradan qaldırmaq üçün)
+
     public InventoryPage addBackpackToCart() {
         addProductToCartByName("Sauce Labs Backpack");
         return this;
     }
 
-    // 3. Sepete gitmək üçün (CartPage obyektini qaytarır)
+
     public CartPage clickCartIcon() {
         click(CART_LINK);
         return new CartPage(driver);
