@@ -1,5 +1,5 @@
-# 1. Official Maven image with OpenJDK 19 / Java base
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+# 1. Maven image with Java 19 support
+FROM markhobson/maven-chrome:jdk-19 AS build
 
 # Layihə üçün işçi qovluğu
 WORKDIR /app

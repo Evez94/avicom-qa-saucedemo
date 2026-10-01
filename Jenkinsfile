@@ -1,31 +1,29 @@
 pipeline {
-    agent any
-
-    tools {
-        // Jenkins-də konfiqurasiya olunmuş JDK və Maven adları
-        maven 'Maven-3.9'
-        jdk 'JDK-19'
+    agent {
+        docker {
+            image 'markhobson/maven-chrome:jdk-19'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
     }
 
     stages {
         stage('Checkout Code') {
             steps {
-                echo 'Checking out source code from Git repository...'
+                echo 'Checking out source code from GitHub...'
                 checkout scm
             }
         }
 
-        stage('Compile & Validate') {
+        stage('Compile Project') {
             steps {
                 echo 'Compiling project and validating dependencies...'
                 sh 'mvn test-compile'
             }
         }
 
-        stage('Execute Automated Tests') {
+        stage('Run Selenium Tests') {
             steps {
-                echo 'Running Selenium TestNG Test Suite...'
-                // Headless arqumenti ilə TestNG testlərini icra edirik
+                echo 'Executing TestNG Test Suite in Headless Docker Container...'
                 sh 'mvn clean test -Dheadless=true'
             }
         }
@@ -33,18 +31,15 @@ pipeline {
 
     post {
         always {
-            echo 'Archiving Test Reports...'
-            // TestNG / Surefire hesabatlarını saxlayır
+            echo 'Archiving test reports...'
             junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
-            
-            // HTML hesabatı (Surefire/Allure) saxlamaq üçün
             archiveArtifacts artifacts: 'target/surefire-reports/**', allowEmptyArchive: true
         }
         success {
-            echo 'SUCCESS: All automated tests passed successfully!'
+            echo 'SUCCESS: All tests passed successfully in CI/CD pipeline!'
         }
         failure {
-            echo 'FAILURE: Test execution failed. Please check reports.'
+            echo 'FAILURE: Tests failed. Please check the surefire reports.'
         }
     }
 }
