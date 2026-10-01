@@ -14,6 +14,6 @@ public class CheckoutStepTwoPage extends BasePage {
 
     public CheckoutCompletePage clickFinish() {
         click(FINISH_BUTTON);
-        return new CheckoutCompletePage(driver); // driver buraya mütləq ötürülməlidir!
+        return new CheckoutCompletePage(driver);
     }
 }

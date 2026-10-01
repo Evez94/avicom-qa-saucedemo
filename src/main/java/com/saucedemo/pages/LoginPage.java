@@ -11,7 +11,7 @@ public class LoginPage extends BasePage {
     private final By loginButton = By.id("login-button");
     private final By errorMessage = By.cssSelector("[data-test='error']");
 
-    // Driver-i BasePage-ə ötürən konstruktor
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -26,7 +26,7 @@ public class LoginPage extends BasePage {
 
     public InventoryPage clickLoginButton() {
         click(loginButton);
-        return new InventoryPage(driver); // driver dəyişəni InventoryPage-ə ötürülür
+        return new InventoryPage(driver);
     }
 
     public InventoryPage logIntoApplication(String username, String password) {

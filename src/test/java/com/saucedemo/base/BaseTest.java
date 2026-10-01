@@ -20,7 +20,7 @@ public class BaseTest {
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
 
-        // Pop-up və parolla bağlı xəbərdarlıqları söndürmək üçün
+
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("credentials_enable_service", false);
         prefs.put("profile.password_manager_enabled", false);
@@ -29,25 +29,25 @@ public class BaseTest {
         options.setExperimentalOption("prefs", prefs);
         options.addArguments("--disable-save-password-bubble");
 
-        // --- Docker və Headless rejimi üçün lazımi parametrlər ---
+
         boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "true"));
 
         if (isHeadless) {
-            options.addArguments("--headless=new"); // Modern headless rejimi
-            options.addArguments("--no-sandbox"); // Docker daxilində root hüquqları ilə işləmək üçün mütləqdir
-            options.addArguments("--disable-dev-shm-usage"); // Docker yaddaş çətinliyinin (64MB /dev/shm) qarşısını alır
-            options.addArguments("--window-size=1920,1080"); // Headless rejimdə elementlərin görsənməsi üçün ölçü
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--window-size=1920,1080");
             options.addArguments("--disable-gpu");
         }
 
-        // 1. Driver-i tənzimlənmiş options ilə başladırıq
+
         driver = new ChromeDriver(options);
 
-        // 2. Brauzer pəncərəsini böyüdüb sayta daxil oluruq
+
         driver.manage().window().maximize();
         driver.get(SAUCEDEMO_URL);
 
-        // 3. Page Object hazırlığı
+
         loginPage = new LoginPage(driver);
     }
 

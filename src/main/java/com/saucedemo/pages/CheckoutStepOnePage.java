@@ -32,7 +32,7 @@ public class CheckoutStepOnePage extends BasePage {
         click(CONTINUE_BUTTON);
     }
 
-    // Reusable metod: Bütün məlumatları doldurub daxil olur
+
     public CheckoutStepTwoPage fillInformationAndContinue(String firstName, String lastName, String postalCode) {
         enterFirstName(firstName);
         enterLastName(lastName);

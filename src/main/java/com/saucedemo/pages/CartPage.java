@@ -18,7 +18,7 @@ public class CartPage extends BasePage {
         super(driver);
     }
 
-    // Səbətdəki məhsul adlarını siyahı kimi qaytarır
+
     public List<String> getCartItemNames() {
         List<WebElement> elements = findAll(CART_ITEM_NAME);
         List<String> names = new ArrayList<>();
@@ -28,7 +28,7 @@ public class CartPage extends BasePage {
         return names;
     }
 
-    // Hər bir məhsulun miqdarını (quantity) qaytarır
+
     public List<Integer> getCartItemQuantities() {
         List<WebElement> elements = findAll(CART_ITEM_QUANTITY);
         List<Integer> quantities = new ArrayList<>();
@@ -38,7 +38,7 @@ public class CartPage extends BasePage {
         return quantities;
     }
 
-    // Checkout səhifəsinə keçid etmək üçün
+
     public CheckoutStepOnePage clickCheckout() {
         click(CHECKOUT_BUTTON);
         return new CheckoutStepOnePage(driver);

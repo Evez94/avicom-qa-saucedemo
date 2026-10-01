@@ -14,7 +14,7 @@ public class CartAndCheckoutTests extends BaseTest {
 
     @BeforeMethod
     public void login() {
-        // Hər testdən əvvəl avtomatik login olunur
+
         inventoryPage = loginPage.logIntoApplication("standard_user", "secret_sauce");
     }
 
@@ -69,7 +69,7 @@ public class CartAndCheckoutTests extends BaseTest {
 
     @Test(description = "Scenario 8: Verify successful full checkout flow from login to order completion")
     public void testSuccessfulFullCheckoutFlow() {
-        // @BeforeMethod artıq login olduğu üçün birbaşa məhsul əlavə edirik:
+
         inventoryPage.addBackpackToCart();
 
         CartPage cartPage = inventoryPage.clickCartIcon();
