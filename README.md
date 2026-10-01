@@ -57,24 +57,24 @@ cd avicom-qa-saucedemo
 How to Run Tests
 To execute the complete test suite locally via Maven:  mvn clean test
 
-To run a specific TestNG suite configuration (testng.xml): mvn test -DsuiteXmlFile=testng.xml
+To run a specific TestNG suite configuration (testng.xml):  mvn test -DsuiteXmlFile=testng.xml
 
 AVICOM-Sauce-Demo-site-automation/
 ├── src/
 │   ├── main/java/com/saucedemo/
 │   │   ├── base/
-│   │   │   └── BasePage.java            # Explicit waits & reusable UI wrappers
+│   │   │   └── BasePage.java            # Base page wrapping driver and element/JS utils
 │   │   ├── utils/
 │   │   │   ├── Utility.java             # Base parent class for driver reference
 │   │   │   ├── JavaScriptUtility.java   # JavaScript Executor helper methods
 │   │   │   └── ElementUtils.java        # Explicit wait wrappers & web element actions
 │   │   └── pages/
-│   │       ├── LoginPage.java           # Authentication UI actions
-│   │       ├── InventoryPage.java       # Product list & sorting logic
-│   │       ├── CartPage.java            # Shopping cart items & quantities
-│   │       ├── CheckoutStepOnePage.java # User details form
-│   │       ├── CheckoutStepTwoPage.java # Order review & price calculations
-│   │       └── CheckoutCompletePage.java# Order confirmation header
+│   │       ├── LoginPage.java           # Authentication UI actions & error handling
+│   │       ├── InventoryPage.java       # Product catalog, sorting, & cart navigation
+│   │       ├── CartPage.java            # Shopping cart items verification & quantity checks
+│   │       ├── CheckoutStepOnePage.java # User details form (First name, Last name, Postal code)
+│   │       ├── CheckoutStepTwoPage.java # Order review, item totals, & price calculations
+│   │       └── CheckoutCompletePage.java# Order completion & success message verification
 │   └── test/java/com/saucedemo/
 │       ├── base/
 │       │   └── BaseTest.java            # Driver lifecycle (@BeforeMethod, @AfterMethod)
