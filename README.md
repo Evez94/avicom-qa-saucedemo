@@ -8,8 +8,8 @@
 ![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-red.svg)
 
 ## 👤 Author & Contact
-* **Name:** EvEz Aslanov
-* **Email:** evez.aslanov94@gmail.com
+* **Name:** Evez Aslanov
+* **Email:** evez.aslanov.94@gmail.com
 * **Assessment:** AVICOM QA Automation Engineer Practical Test
 
 ---
@@ -51,7 +51,7 @@ Before running the tests, ensure you have the following installed on your local 
 
 ### Clone the Repository
 ```bash
-git clone [https://github.com/Evez94/avicom-qa-saucedemo.git](https://github.com/Evez94/avicom-qa-saucedemo.git)
+git clone [https://github.com/Evez94/avicom-qa-saucedemo.git]
 cd avicom-qa-saucedemo
 
 How to Run Tests
