@@ -7,6 +7,14 @@
 ![Docker](https://img.shields.io/badge/Docker-Containerized-blue.svg)
 ![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-red.svg)
 
+## 👤 Author & Contact
+* **Name:** EvEz Aslanov
+* **Email:** [evez.aslanov94@gmail.com](mailto:evez.aslanov94@gmail.com) *(Öz e-poçtunuzu yazın)*
+* **Assessment:** AVICOM QA Automation Engineer Practical Test
+
+---
+
+## 📌 Project Overview
 This project is an enterprise-standard, production-ready Automated Testing Framework built for the [SauceDemo](https://www.saucedemo.com/) e-commerce web application. Designed using the **Page Object Model (POM)** pattern, it ensures maintainability, scalability, and robust synchronization for End-to-End (E2E) and Regression testing suites, fully integrated with Docker and Jenkins CI/CD pipelines.
 
 ---
@@ -34,9 +42,19 @@ This project is an enterprise-standard, production-ready Automated Testing Frame
 
 ---
 
-## 📁 Project Structure
+## 🚀 Prerequisites & Installation
 
-```text
+Before running the tests, ensure you have the following installed on your local machine:
+* **Java JDK 19** or higher
+* **Apache Maven**
+* **Google Chrome** browser (for local GUI execution)
+
+### Clone the Repository
+```bash
+git clone [https://github.com/Evez94/avicom-qa-saucedemo.git](https://github.com/Evez94/avicom-qa-saucedemo.git)
+cd avicom-qa-saucedemo
+
+
 AVICOM-Sauce-Demo-site-automation/
 ├── src/
 │   ├── main/java/com/saucedemo/
@@ -64,4 +82,5 @@ AVICOM-Sauce-Demo-site-automation/
 ├── Jenkinsfile                          # Jenkins CI/CD pipeline definition
 ├── testng.xml                           # TestNG suite runner configuration
 ├── pom.xml                              # Maven build & surefire plugin setup
+├── REPORT.md                            # Detailed test execution & defect report
 └── README.md                            # Framework documentation
