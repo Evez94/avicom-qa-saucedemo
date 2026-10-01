@@ -9,7 +9,7 @@
 
 ## 👤 Author & Contact
 * **Name:** EvEz Aslanov
-* **Email:** [evez.aslanov94@gmail.com](mailto:evez.aslanov94@gmail.com) *(Öz e-poçtunuzu yazın)*
+* **Email:** evez.aslanov94@gmail.com
 * **Assessment:** AVICOM QA Automation Engineer Practical Test
 
 ---
@@ -54,6 +54,10 @@ Before running the tests, ensure you have the following installed on your local 
 git clone [https://github.com/Evez94/avicom-qa-saucedemo.git](https://github.com/Evez94/avicom-qa-saucedemo.git)
 cd avicom-qa-saucedemo
 
+How to Run Tests
+To execute the complete test suite locally via Maven:  mvn clean test
+
+To run a specific TestNG suite configuration (testng.xml): mvn test -DsuiteXmlFile=testng.xml
 
 AVICOM-Sauce-Demo-site-automation/
 ├── src/
