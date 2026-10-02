@@ -9,11 +9,12 @@
 
 ## 👤 Author & Contact
 * **Name:** Evez Aslanov
-* **Email:** evez.aslanov.94@gmail.com
+* **Email:** evez.aslanov.94@gmail.com 
 * **Assessment:** AVICOM QA Automation Engineer Practical Test
 
 ---
 
+ 
 ## 📌 Project Overview
 This project is an enterprise-standard, production-ready Automated Testing Framework built for the [SauceDemo](https://www.saucedemo.com/) e-commerce web application. Designed using the **Page Object Model (POM)** pattern, it ensures maintainability, scalability, and robust synchronization for End-to-End (E2E) and Regression testing suites, fully integrated with Docker and Jenkins CI/CD pipelines.
 
